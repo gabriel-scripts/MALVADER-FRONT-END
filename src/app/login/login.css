@@ -1,0 +1,158 @@
+/* login.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; 
+  font-family: Arial, sans-serif;
+}
+
+
+.container {
+  max-width: 1300px;
+  height: 90vh;
+  margin: 5vh auto;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* lado vermelho com gradiente */
+.login-left {
+  flex: 1;
+  background: radial-gradient(circle, #e53935 0%, #8b1c1c 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mascote {
+  margin-bottom: -20px;
+  height: auto;
+  width: 340px;
+}
+
+.banco-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 50px;
+  margin: 10px 0 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.banco-title .banco {
+  font-family: 'League Spartan', sans-serif;
+  color: rgb(20, 2, 34);
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.banco-title .malvader {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 70px;
+  color: white;
+}
+
+.slogan {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 23px;
+  margin-top: -6px;
+  color: rgb(20, 2, 34);
+  font-weight: bold;
+}
+
+/* lado do formulário */
+.login-right {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  flex: 1;
+  background-color: #121212;
+  color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right h2 {
+  font-size: 42px;
+  text-shadow: 2px 2px 3px rgba(98, 0, 255, 0.7);
+}
+
+.login-right h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 42px;
+  margin-top: -10px;
+  text-shadow: 2px 2px 3px rgba(98, 0, 255, 0.7);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.login-form input {
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+
+.forgot {
+  text-align: right;
+  margin-top: 8px;
+}
+
+.forgot a {
+  font-size: 12px;
+  color: #f05f5f;
+  text-decoration: none;
+}
+
+.login-form button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #d33a2c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 4px 0 #881a1a;
+}
+
+.login-form button:hover {
+  background-color: #b12d22;
+}
+
+.register {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.register a {
+  color: #ff6a6a;
+  text-decoration: none;
+}
+
+
