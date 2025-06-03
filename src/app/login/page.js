@@ -1,18 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import "./login.css";
 
 export default function Login() {
   const [cpf, setCpf] = useState("");
   const [senha, setSenha] = useState("");
+  const [tipo, setTipo] = useState("funcionario");
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aqui vai a chamada para o backend
     console.log("CPF:", cpf);
     console.log("Senha:", senha);
+    console.log("Tipo de usuário:", tipo);
+
+    // Aqui você pode adicionar a lógica para autenticar o usuário
+
   };
 
   return (
@@ -31,7 +38,6 @@ export default function Login() {
           <span className="malvader">MALVADER</span>
         </h1>
         <p className="slogan">acho lindo esse momento</p>
-
       </div>
 
       {/* Lado direito */}
@@ -56,6 +62,29 @@ export default function Login() {
             onChange={(e) => setSenha(e.target.value)}
           />
 
+          <div className="tipo-usuario">
+            <label>
+              <input
+                type="radio"
+                name="tipo"
+                value="funcionario"
+                checked={tipo === "funcionario"}
+                onChange={() => setTipo("funcionario")}
+              />
+              Funcionário
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="tipo"
+                value="cliente"
+                checked={tipo === "cliente"}
+                onChange={() => setTipo("cliente")}
+              />
+              Cliente
+            </label>
+          </div>
+
           <div className="forgot">
             <a href="#">Esqueci minha senha</a>
           </div>
@@ -65,9 +94,10 @@ export default function Login() {
           <div className="register">
             Ainda não tem uma conta? <a href="#">Crie uma conta</a>
           </div>
-
-          
         </form>
+        <div className="exit-inside">
+            <button type="button" onClick={() => router.push("/")}>Sair</button>
+          </div>
       </div>
     </div>
   );

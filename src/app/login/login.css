@@ -16,6 +16,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  position: relative;
 }
 
 /* lado vermelho com gradiente */
@@ -155,4 +156,46 @@ body {
   text-decoration: none;
 }
 
+.tipo-usuario {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
 
+.tipo-usuario label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.tipo-usuario input[type="radio"] {
+  accent-color: #d33a2c; /* Vermelho temático */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.exit-inside {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.exit-inside button {
+  background-color: #d33a2c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 4px 0 #881a1a;
+}
+
+.exit-inside button:hover {
+  background-color: #b12d22;
+}

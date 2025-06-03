@@ -1,0 +1,121 @@
+/* otp.css */
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap");
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.otp-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1f1826 20%, #121212 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "League Spartan", sans-serif;
+}
+
+.otp-box {
+  background-color: #1f1826;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.otp-box img {
+  margin-bottom: 20px;
+}
+
+.otp-box h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.otp-box p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ddd;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.otp-inputs input {
+  width: 48px;
+  height: 52px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.otp-inputs input:focus {
+  box-shadow: 0 0 0 2px #e53935;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #cc3b3b;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px #952222;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #b32c2c;
+}
+
+.otp-resend {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.otp-resend a {
+  color: #e53935;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.otp-resend a:hover {
+  text-decoration: underline;
+}
+
+.otp-box h1 {
+  font-size: 1.8rem; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.otp-box p {
+  font-size: 1.05rem; 
+  color: #ccc; 
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.4;
+}
+
