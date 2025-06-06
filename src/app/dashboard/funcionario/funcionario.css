@@ -1,0 +1,154 @@
+
+html, body, #__next {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1422 65%, #18141d 100%);
+  overflow-x: hidden;
+}
+
+
+.funcionario-bg {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none; 
+}
+
+
+.funcionario-card {
+  background: #21192b;
+  border-radius: 32px;
+  box-shadow: 0 6px 32px #000a;
+  width: 440px;
+  max-width: 97vw;
+  padding: 44px 34px 36px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+.mascote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 200px;
+  margin-bottom: 0.5rem;
+}
+
+.mascote-container img {
+  width: 110px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px #0006);
+}
+
+
+.titulo-funcionario {
+  background:  #df2121;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.3rem;
+  font-weight: bold;
+  border-radius: 26px;
+  padding: 12px 34px 6px 34px;
+  margin-top: -14px;
+  margin-bottom: 16px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 2px 10px #0003;
+}
+
+
+.subtitulo-funcionario {
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.19rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 32px;
+  margin-top: 0;
+  line-height: 1.22;
+  text-shadow: 0 2px 6px #0004;
+}
+
+.botoes-funcionario {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+.botoes-funcionario button {
+  background: #df2121;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.23rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  height: 74px;
+  min-width: 0;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 2px 14px #0002;
+  transition: background 0.18s, color 0.15s, transform 0.08s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.botoes-funcionario button:hover {
+  background: #ce2020;
+  color: #2f2640;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 650px) {
+  .funcionario-card {
+    width: 97vw;
+    padding: 30px 6px;
+    border-radius: 20px;
+  }
+  .mascote-container {
+    width: 80px;
+    height: 94px;
+  }
+  .mascote-container img {
+    width: 66px;
+    height: 84px;
+  }
+  .titulo-funcionario {
+    font-size: 1.3rem;
+    padding: 9px 11vw 2px 11vw;
+    margin-bottom: 12px;
+  }
+  .subtitulo-funcionario {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+  .botoes-funcionario {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .botoes-funcionario button {
+    font-size: 1.06rem;
+    height: 54px;
+    border-radius: 11px;
+  }
+}
