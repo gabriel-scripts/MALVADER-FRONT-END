@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import "./funcionario.css";
 
 export default function DashboardFuncionario() {
