@@ -103,7 +103,6 @@ export default function AbrirConta() {
               value={TAXA_RENDIMENTO}
               disabled
               readOnly
-              style={{ background: "#231b2d", color: "#e6bc6a" }}
             />
           </div>
         )}
@@ -117,7 +116,6 @@ export default function AbrirConta() {
                 value={LIMITE_DINAMICO}
                 disabled
                 readOnly
-                style={{ background: "#231b2d", color: "#e6bc6a" }}
               />
             </div>
             <div className="campo-form">
@@ -137,7 +135,6 @@ export default function AbrirConta() {
                 value={TAXA_MANUTENCAO}
                 disabled
                 readOnly
-                style={{ background: "#231b2d", color: "#e6bc6a" }}
               />
             </div>
           </>
@@ -161,7 +158,6 @@ export default function AbrirConta() {
                 value={VALOR_MINIMO + " (definido pelo sistema)"}
                 disabled
                 readOnly
-                style={{ background: "#231b2d", color: "#e6bc6a" }}
               />
             </div>
           </>

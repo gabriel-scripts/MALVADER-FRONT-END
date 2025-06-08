@@ -38,7 +38,7 @@ body, html {
   font-weight: bold;
   background: transparent;
   color: #fff;
-  border: 2px solid #e6bc6a;
+  border: 2px solid #df2121;
   border-radius: 18px;
   padding: 10px 28px;
   transition: background 0.15s, color 0.15s;
@@ -46,9 +46,9 @@ body, html {
 }
 .tipos-conta button.ativo,
 .tipos-conta button:hover {
-  background: #e6bc6a;
+  background: #df2121;
   color: #21192b;
-  border: 2px solid #e6bc6a;
+  border: 2px solid #df2121;
 }
 
 .abrir-conta-form {
@@ -69,7 +69,7 @@ body, html {
 .campo-form label {
   font-family: 'League Spartan', sans-serif;
   font-size: 1.1rem;
-  color: #e6bc6a;
+  color: #ffffff;
   font-weight: 600;
   margin-left: 3px;
   margin-bottom: 2px;
@@ -79,10 +79,10 @@ body, html {
 .campo-form select {
   width: 100%;
   background: transparent;
-  border: 2px solid #e6bc6a;
+  border: 2px solid #df2121;
   border-radius: 14px;
   padding: 17px 16px 14px 16px;  
-  color: #fff;
+  color: #afa1a1;
   font-family: 'League Spartan', sans-serif;
   font-size: 1.13rem;
   font-weight: 500;
@@ -93,13 +93,13 @@ body, html {
 
 .campo-form input:focus,
 .campo-form select:focus {
-  border: 2.5px solid #fff2bb;
+  border: 2.5px solid #df2121;
 }
 
 .campo-form input[disabled],
 .campo-form select[disabled] {
   background: #291f34;
-  color: #e6bc6a;
+  color: #ffffff;
   opacity: 1;
   font-style: italic;
   cursor: not-allowed;
@@ -109,7 +109,7 @@ body, html {
 .abrir-conta-form button[type="submit"] {
   grid-column: 1 / -1;
   margin-top: 18px;
-  background: #e6bc6a;
+  background: #df2121;
   color: #21192b;
   font-family: 'League Spartan', sans-serif;
   font-size: 1.23rem;
@@ -123,17 +123,13 @@ body, html {
   transition: background 0.2s, color 0.2s;
 }
 .abrir-conta-form button[type="submit"]:hover {
-  background: #ffe097;
+  background: #b11010;
   color: #392c41;
 }
 
 .mensagem {
-  grid-column: 1 / -1;
   margin-top: 14px;
   color: #fff;
-  background: #8c7845ee;
-  padding: 13px 0;
-  border-radius: 9px;
   font-family: 'League Spartan', sans-serif;
   font-weight: 700;
   text-align: center;
