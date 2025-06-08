@@ -1,0 +1,154 @@
+.abrir-conta-container {
+  background: #21192b;
+  border-radius: 28px;
+  box-shadow: 0 4px 28px #0009;
+  width: 900px;
+  max-width: 98vw;
+  padding: 42px 44px 38px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 36px auto;
+}
+
+.abrir-conta-container h2 {
+  font-family: 'League Spartan', sans-serif;
+  color: #fff;
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 1.2px;
+}
+
+.tipos-conta {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.tipos-conta button {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #e6bc6a;
+  border-radius: 18px;
+  padding: 10px 28px;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+.tipos-conta button.ativo,
+.tipos-conta button:hover {
+  background: #e6bc6a;
+  color: #21192b;
+  border: 2px solid #e6bc6a;
+}
+
+.abrir-conta-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 30px;      /* <-- aumenta o espaçamento! */
+  margin-bottom: 12px;
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;            /* <-- aumenta o espaço entre label e input */
+  min-width: 0;
+}
+
+.campo-form label {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.1rem;
+  color: #e6bc6a;
+  font-weight: 600;
+  margin-left: 3px;
+  margin-bottom: 2px;
+}
+
+.campo-form input,
+.campo-form select {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #e6bc6a;
+  border-radius: 14px;
+  padding: 17px 16px 14px 16px;  /* <-- padding vertical maior */
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.13rem;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.15s;
+  box-sizing: border-box;         /* <-- importante para não estourar o grid */
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+  border: 2.5px solid #fff2bb;
+}
+
+.campo-form input[disabled],
+.campo-form select[disabled] {
+  background: #291f34;
+  color: #e6bc6a;
+  opacity: 1;
+  font-style: italic;
+  cursor: not-allowed;
+}
+
+/* SUBMIT button ocupa as duas colunas */
+.abrir-conta-form button[type="submit"] {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+  background: #e6bc6a;
+  color: #21192b;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.23rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  padding: 20px 0;
+  box-shadow: 0 2px 12px #0002;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+.abrir-conta-form button[type="submit"]:hover {
+  background: #ffe097;
+  color: #392c41;
+}
+
+.mensagem {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  color: #fff;
+  background: #8c7845ee;
+  padding: 13px 0;
+  border-radius: 9px;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.11rem;
+}
+
+@media (max-width: 900px) {
+  .abrir-conta-container {
+    width: 99vw;
+    padding: 22px 3vw 22px 3vw;
+    border-radius: 15px;
+  }
+  .abrir-conta-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .abrir-conta-form button[type="submit"] {
+    font-size: 1rem;
+    padding: 14px 0;
+    border-radius: 11px;
+    margin-top: 16px;
+  }
+}
