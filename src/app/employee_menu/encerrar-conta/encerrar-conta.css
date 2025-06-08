@@ -1,0 +1,121 @@
+body, html {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1422 60%, #18141d 100%);
+}
+
+.encerrar-conta-container {
+  background: #21192b;
+  border-radius: 28px;
+  box-shadow: 0 4px 28px #0008;
+  width: 440px;
+  max-width: 97vw;
+  padding: 36px 28px 32px 28px;
+  margin: 48px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.encerrar-conta-container h2 {
+  font-family: 'League Spartan', sans-serif;
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 26px;
+  letter-spacing: 1px;
+}
+
+.encerrar-conta-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.campo-form label {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.08rem;
+  color: #fff;
+  font-weight: 600;
+  margin-left: 3px;
+}
+
+.campo-form input,
+.campo-form select {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #df2121;
+  border-radius: 12px;
+  padding: 14px 13px;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.07rem;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.15s, background 0.15s;
+  box-sizing: border-box;
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+  border: 2px solid #ff4747;
+  background: #2a1d2e;
+}
+
+::placeholder {
+  color: #bfa4a4;
+  opacity: 1;
+}
+
+.encerrar-conta-form button[type="submit"],
+.enviar-otp-btn {
+  width: 100%;
+  background: #df2121;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.12rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 13px;
+  padding: 16px 0;
+  box-shadow: 0 2px 12px #0003;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  margin-bottom: 0;
+  transition: background 0.22s;
+  display: block;
+}
+
+.encerrar-conta-form button[type="submit"]:hover,
+.enviar-otp-btn:hover {
+  background: #b71a1a;
+}
+
+.mensagem {
+  margin-top: 18px;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.07rem;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+@media (max-width: 650px) {
+  .encerrar-conta-container {
+    width: 99vw;
+    padding: 18px 4vw;
+    border-radius: 13px;
+  }
+}
