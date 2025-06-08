@@ -17,12 +17,12 @@ export default function DashboardFuncionario() {
       ALÉM DE NADA, O QUE <br /> MAIS VOCÊ PODE FAZER?
     </div>
         <div className="botoes-funcionario">
-          <button onClick={() => router.push("/abrir-conta")}>ABRIR CONTA</button>
-          <button onClick={() => router.push("/encerrar-conta")}>ENCERRAR CONTA</button>
-          <button onClick={() => router.push("/consultar-dados")}>CONSULTAR DADOS</button>
-          <button onClick={() => router.push("/alterar-dados")}>ALTERAR DADOS</button>
-          <button onClick={() => router.push("/gerar-relatorio")}>GERAR RELATÓRIO</button>
-          <button onClick={() => router.push("/cadastrar-funcionarios")}>CADASTRAR FUNCIONÁRIOS</button>
+          <button onClick={() => router.push("/menu_funcionario/abrir-conta")}>ABRIR CONTA</button>
+          <button onClick={() => router.push("/menu_funcionario/encerrar-conta")}>ENCERRAR CONTA</button>
+          <button onClick={() => router.push("/menu_funcionario/consultar-dados")}>CONSULTAR DADOS</button>
+          <button onClick={() => router.push("/menu_funcionario/alterar-dados")}>ALTERAR DADOS</button>
+          <button onClick={() => router.push("/menu_funcionario/gerar-relatorio")}>GERAR RELATÓRIO</button>
+          <button onClick={() => router.push("/menu_funcionario/cadastrar-funcionarios")}>CADASTRAR FUNCIONÁRIOS</button>
         </div>
       </div>
     </div>
