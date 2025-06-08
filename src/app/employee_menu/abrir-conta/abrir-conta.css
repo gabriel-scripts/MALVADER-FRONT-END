@@ -50,14 +50,14 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px 30px;      /* <-- aumenta o espaçamento! */
+  gap: 28px 30px;    
   margin-bottom: 12px;
 }
 
 .campo-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;            /* <-- aumenta o espaço entre label e input */
+  gap: 8px;            
   min-width: 0;
 }
 
@@ -76,14 +76,14 @@
   background: transparent;
   border: 2px solid #e6bc6a;
   border-radius: 14px;
-  padding: 17px 16px 14px 16px;  /* <-- padding vertical maior */
+  padding: 17px 16px 14px 16px;  
   color: #fff;
   font-family: 'League Spartan', sans-serif;
   font-size: 1.13rem;
   font-weight: 500;
   outline: none;
   transition: border 0.15s;
-  box-sizing: border-box;         /* <-- importante para não estourar o grid */
+  box-sizing: border-box;        
 }
 
 .campo-form input:focus,
@@ -100,7 +100,7 @@
   cursor: not-allowed;
 }
 
-/* SUBMIT button ocupa as duas colunas */
+
 .abrir-conta-form button[type="submit"] {
   grid-column: 1 / -1;
   margin-top: 18px;
