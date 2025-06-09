@@ -90,7 +90,7 @@ export default function Register() {
 
   
   const [dia, mes, ano] = dataNascimento.split("/");
-  const dataFormatada = `${ano}-${mes}-${dia}`;
+  const dataFormatada = (dia && mes && ano) ? `${ano}-${mes}-${dia}` : null;
 
   const body = {
     nome: `${nome} ${sobrenome}`,
@@ -100,7 +100,7 @@ export default function Register() {
     tipo_usuario: "cliente", 
     senha_hash: senha,
     email,
-    score_credito: "750",
+    score_credito: null,
     cargo: null,
     id_supervisor: null,
     endereco: {
