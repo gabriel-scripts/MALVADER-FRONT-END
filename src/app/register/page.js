@@ -80,29 +80,61 @@ export default function Register() {
       }
    
 
-    const handleRegister = (e) => {
-    e.preventDefault();
+    const handleRegister = async (e) => {
+  e.preventDefault();
 
-    if (senha !== confirmarSenha) {
-        alert("As senhas não coincidem!");
-        return;
+  if (senha !== confirmarSenha) {
+    alert("As senhas não coincidem!");
+    return;
+  }
+
+  
+  const [dia, mes, ano] = dataNascimento.split("/");
+  const dataFormatada = `${ano}-${mes}-${dia}`;
+
+  const body = {
+    nome: `${nome} ${sobrenome}`,
+    cpf: CPF.replace(/\D/g, ""),
+    data_nascimento: dataFormatada,
+    telefone,
+    tipo_usuario: "cliente", 
+    senha_hash: senha,
+    email,
+    score_credito: "750",
+    cargo: null,
+    id_supervisor: null,
+    endereco: {
+      cep: CEP,
+      local: logradouro,
+      numero_casa: parseInt(numero),
+      bairro,
+      cidade,
+      estado,
+      complemento
     }
-
-    console.log("Nome:", nome);
-    console.log("Sobrenome:", sobrenome);
-    console.log("CPF:", CPF);
-    console.log("Data de nascimento:", dataNascimento);
-    console.log("Telefone:", telefone);
-    console.log("Email:", email);
-    console.log("Senha:", senha);
-    console.log("CEP:", CEP);
-    console.log("Logradouro:", logradouro);
-    console.log("Número:", numero);
-    console.log("Bairro:", bairro);
-    console.log("Cidade:", cidade);
-    console.log("Estado:", estado);
-    console.log("Complemento:", complemento);
   };
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (response.ok) {
+      alert("Cadastro realizado com sucesso!");
+      
+    } else {
+      const errorData = await response.json();
+      alert("Erro ao cadastrar: " + (errorData.detail || JSON.stringify(errorData)));
+    }
+  } catch (error) {
+    alert("Erro de conexão com o servidor: " + error.message);
+  }
+};
+
 
       return (
         <>
