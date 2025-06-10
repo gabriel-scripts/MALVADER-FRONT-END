@@ -92,8 +92,19 @@ export default function Login() {
           <button type="submit">Login</button>
 
           <div className="register">
-            Ainda não tem uma conta? <a href="#">Crie uma conta</a>
+          <div>
+            Ainda não tem uma conta?{" "}
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/register");
+              }}
+            >
+              Crie uma conta
+            </a>
           </div>
+        </div>
         </form>
         <div className="exit-inside">
             <button type="button" onClick={() => router.push("/")}>Sair</button>
