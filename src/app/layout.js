@@ -1,3 +1,4 @@
+import './globals.css';
 export const metadata = {
   title: 'Banco MALVADER',
   description: 'Sistema bancário do lado sombrio',

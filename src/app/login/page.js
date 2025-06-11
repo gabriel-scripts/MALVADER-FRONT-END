@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import Image from "next/image";
 import "./login.css";
 
@@ -10,6 +9,7 @@ export default function Login() {
   const [cpf, setCpf] = useState("");
   const [senha, setSenha] = useState("");
   const [tipo, setTipo] = useState("funcionario");
+  const [codigoFuncionario, setCodigoFuncionario] = useState("");
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -18,8 +18,11 @@ export default function Login() {
     console.log("Senha:", senha);
     console.log("Tipo de usuário:", tipo);
 
-    // Aqui você pode adicionar a lógica para autenticar o usuário
+    if (tipo === "funcionario") {
+      console.log("Código de Funcionário:", codigoFuncionario);
+    }
 
+    // Aqui você pode adicionar a lógica para autenticar o usuário
   };
 
   return (
@@ -62,6 +65,19 @@ export default function Login() {
             onChange={(e) => setSenha(e.target.value)}
           />
 
+          {/* Campo "Código de Funcionário" só aparece para funcionário */}
+          {tipo === "funcionario" && (
+            <>
+              <label>Código de Funcionário</label>
+              <input
+                type="text"
+                placeholder="Informe o seu código de funcionário"
+                value={codigoFuncionario}
+                onChange={(e) => setCodigoFuncionario(e.target.value)}
+              />
+            </>
+          )}
+
           <div className="tipo-usuario">
             <label>
               <input
@@ -92,23 +108,25 @@ export default function Login() {
           <button type="submit">Login</button>
 
           <div className="register">
-          <div>
-            Ainda não tem uma conta?{" "}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                router.push("/register");
-              }}
-            >
-              Crie uma conta
-            </a>
+            <div>
+              Ainda não tem uma conta?{" "}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  router.push("/register");
+                }}
+              >
+                Crie uma conta
+              </a>
+            </div>
           </div>
-        </div>
         </form>
         <div className="exit-inside">
-            <button type="button" onClick={() => router.push("/")}>Sair</button>
-          </div>
+          <button type="button" onClick={() => router.push("/")}>
+            Sair
+          </button>
+        </div>
       </div>
     </div>
   );
