@@ -64,7 +64,7 @@ export default function AbrirConta() {
       </div>
 
       <form className="abrir-conta-form" onSubmit={handleSubmit}>
-        {/* Campos gerais */}
+   
         <div className="campo-form">
           <label>Agência *</label>
           <input name="agencia" placeholder="Agência" value={form.agencia} onChange={handleChange} />
@@ -94,7 +94,7 @@ export default function AbrirConta() {
           <input name="senha" type="password" placeholder="Senha" value={form.senha} onChange={handleChange} />
         </div>
 
-        {/* Campos específicos */}
+      
         {tipo === "CP" && (
           <div className="campo-form">
             <label>Taxa de rendimento</label>
