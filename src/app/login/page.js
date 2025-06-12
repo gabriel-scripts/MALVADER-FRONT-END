@@ -10,19 +10,58 @@ export default function Login() {
   const [senha, setSenha] = useState("");
   const [tipo, setTipo] = useState("funcionario");
   const [codigoFuncionario, setCodigoFuncionario] = useState("");
+  const [erro, setErro] = useState("");
   const router = useRouter();
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("CPF:", cpf);
-    console.log("Senha:", senha);
-    console.log("Tipo de usuário:", tipo);
+    setErro("");
 
-    if (tipo === "funcionario") {
-      console.log("Código de Funcionário:", codigoFuncionario);
+    const cpfLimpo = cpf.replace(/\D/g, "");
+
+    const body = {
+      cpf: cpfLimpo,
+      senha: senha,
+      ...(tipo === "funcionario" && { codigo_funcionario: codigoFuncionario }),
+    };
+
+    try {
+      const response = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (response.ok) {
+        // Salva as infos necessárias no localStorage para a tela de OTP usar
+        localStorage.setItem(
+          "loginInfo",
+          JSON.stringify({
+            cpf: cpfLimpo,
+            tipo: tipo,
+            senha: senha,
+            codigo_funcionario: tipo === "funcionario" ? codigoFuncionario : "",
+          })
+        );
+        // Redireciona para a tela de OTP 
+        router.push("/otp");
+      } else {
+        let errorMessage = "Erro ao logar.";
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.detail || JSON.stringify(errorData);
+        } catch {
+          // Erro não veio em JSON
+        }
+        setErro(errorMessage);
+      }
+    } catch (error) {
+      setErro("Erro de conexão: " + error.message);
     }
-
-    // Aqui você pode adicionar a lógica para autenticar o usuário
   };
 
   return (
@@ -65,7 +104,7 @@ export default function Login() {
             onChange={(e) => setSenha(e.target.value)}
           />
 
-          {/* Campo "Código de Funcionário" só aparece para funcionário */}
+    
           {tipo === "funcionario" && (
             <>
               <label>Código de Funcionário</label>
@@ -100,6 +139,12 @@ export default function Login() {
               Cliente
             </label>
           </div>
+
+          {erro && (
+            <div className="erro" style={{ color: "#e00", marginBottom: "10px" }}>
+              {erro}
+            </div>
+          )}
 
           <div className="forgot">
             <a href="#">Esqueci minha senha</a>
