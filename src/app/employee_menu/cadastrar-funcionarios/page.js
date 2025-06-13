@@ -148,8 +148,7 @@ export default function CadastrarFuncionario() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoxLCJ0aXBvX3VzdWFyaW8iOiJhZG1pbiIsImNhcmdvIjoiZ2VyZW50ZSIsImNvZGlnb19mdW5jaW9uYXJpbyI6IjEwMTAxIiwiY3BmIjoiMDAwMDAwMDAwMDAiLCJleHAiOjE3NDk3MDIyNzV9.Ol0McKrFiRFiXZgOMdXkdAD-tSHZsx0ymGlr8BfGE_o"
-
+          "Authorization": "Bearer  ${token}" 
         },
         body: JSON.stringify(body)
       });
