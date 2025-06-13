@@ -36,7 +36,6 @@ export default function GerarRelatorio() {
     { label: "Depósito", value: "deposito" },
     { label: "Saque", value: "saque" },
     { label: "Transferência", value: "transferencia" }
-   
   ];
 
   return (
@@ -59,26 +58,67 @@ export default function GerarRelatorio() {
 
       {tipoRelatorio ? (
         <form className="filtros-relatorio" onSubmit={handleBuscar}>
-          <input type="date" name="dataInicio" value={filtros.dataInicio} onChange={handleFiltro} placeholder="Data Inicial" />
-          <input type="date" name="dataFim" value={filtros.dataFim} onChange={handleFiltro} placeholder="Data Final" />
-
-          {tipoRelatorio === "movimentacoes" && (
-            <select
-              name="tipoTransacao"
-              value={filtros.tipoTransacao}
+          <div className="filtro-campo">
+            <label htmlFor="dataInicio">Data inicial</label>
+            <input
+              id="dataInicio"
+              type="date"
+              name="dataInicio"
+              value={filtros.dataInicio}
               onChange={handleFiltro}
-            >
-              <option value="">Tipo de Transação</option>
-              {opcoesTransacao.map(opt => (
-                <option value={opt.value} key={opt.value}>{opt.label}</option>
-              ))}
-            </select>
+            />
+          </div>
+          <div className="filtro-campo">
+            <label htmlFor="dataFim">Data final</label>
+            <input
+              id="dataFim"
+              type="date"
+              name="dataFim"
+              value={filtros.dataFim}
+              onChange={handleFiltro}
+            />
+          </div>
+          {tipoRelatorio === "movimentacoes" && (
+            <div className="filtro-campo">
+              <label htmlFor="tipoTransacao">Tipo de Transação</label>
+              <select
+                id="tipoTransacao"
+                name="tipoTransacao"
+                value={filtros.tipoTransacao}
+                onChange={handleFiltro}
+              >
+                <option value="">Selecione</option>
+                {opcoesTransacao.map(opt => (
+                  <option value={opt.value} key={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
           )}
-          {(tipoRelatorio === "movimentacoes" || tipoRelatorio === "inadimplencia" || tipoRelatorio === "desempenho") && (
-            <input name="agencia" value={filtros.agencia} onChange={handleFiltro} placeholder="Agência" />
+          {(tipoRelatorio === "movimentacoes" ||
+            tipoRelatorio === "inadimplencia" ||
+            tipoRelatorio === "desempenho") && (
+            <div className="filtro-campo">
+              <label htmlFor="agencia">Agência</label>
+              <input
+                id="agencia"
+                name="agencia"
+                value={filtros.agencia}
+                onChange={handleFiltro}
+                placeholder="Número da agência"
+              />
+            </div>
           )}
           {tipoRelatorio === "desempenho" && (
-            <input name="funcionario" value={filtros.funcionario} onChange={handleFiltro} placeholder="Funcionário" />
+            <div className="filtro-campo">
+              <label htmlFor="funcionario">Funcionário</label>
+              <input
+                id="funcionario"
+                name="funcionario"
+                value={filtros.funcionario}
+                onChange={handleFiltro}
+                placeholder="Nome ou matrícula"
+              />
+            </div>
           )}
           <button type="submit">Buscar</button>
         </form>
@@ -101,3 +141,4 @@ export default function GerarRelatorio() {
     </div>
   );
 }
+

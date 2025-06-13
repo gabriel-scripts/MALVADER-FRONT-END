@@ -147,6 +147,21 @@
   background: #21192b;
 }
 
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  margin-right: 8px;
+}
+.filtro-campo label {
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.02rem;
+  margin-bottom: 3px;
+  margin-left: 2px;
+  font-weight: 600;
+}
+
 @media (max-width: 950px) {
   .relatorio-container {
     width: 99vw;
