@@ -20,21 +20,21 @@ export default function SaldoCliente() {
   return (
     <>
      
-     <div className="container">
-  <div className="centralizado-conteudo">
-  <div className="mascote-container">
+     <div className="container-cliente">
+  <div className="centralizado-conteudo-c">
+  <div className="mascote-container-c">
       <img src="/imperio.png" alt="Cliente" />
     </div>
     <div className="subtitulo-cliente">
     BEM-VINDO AO SEU IMPÉRIO, <br /> TUDO SOB SEU COMANDO.
     </div>
-    <div className="saldo-container">
-            <div className="valor-saldo">
+    <div className="saldo-container-c">
+            <div className="valor-saldo-c">
               {mostrarSaldo ? `R$ ${saldo.toFixed(2)}` : "••••••"}
             </div>
             <button
               onClick={alternarVisibilidade}
-              className="icone-olho"
+              className="icone-olho-c"
               aria-label={mostrarSaldo ? "Ocultar saldo" : "Mostrar saldo"}
             >
               {mostrarSaldo ? <EyeOff size={24} /> : <Eye size={24} />}

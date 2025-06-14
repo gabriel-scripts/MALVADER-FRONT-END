@@ -65,7 +65,7 @@ export default function Login() {
   };
 
   return (
-    <div className="container">
+    <div className="container-login">
       {/* Lado esquerdo */}
       <div className="login-left">
         <Image

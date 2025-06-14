@@ -13,7 +13,7 @@ body {
 }
 
 
-.container{
+.container-cliente{
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -23,7 +23,7 @@ body {
 }
 
 
-.centralizado-conteudo {
+.centralizado-conteudo-c {
   background: #21192b;
   border-radius: 32px;
   box-shadow: 0 6px 32px #000a;
@@ -36,7 +36,7 @@ body {
   position: relative;
 }
 
-.mascote-container {
+.mascote-container-c {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.mascote-container img {
+.mascote-container-c img {
   width: 110px;
   height: 200px;
   object-fit: contain;
@@ -64,13 +64,13 @@ body {
   text-shadow: 0 2px 6px #0004;
 }
 
-.saldo-container {
+.saldo-container-c {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.valor-saldo {
+.valor-saldo-c{
   font-size: 1.5rem;
   font-weight: bold;
   min-width: 150px;
@@ -83,7 +83,7 @@ body {
   margin-bottom: 32px;
 }
 
-.icone-olho {
+.icone-olho-c {
   background: transparent;
   border: none;
   padding: 0;

@@ -180,7 +180,7 @@ export default function Register() {
 
   return (
     <>
-      <header className="header">
+      <header className="header-register">
         <div className="header-container">
           <div className="logo-container">
             <Image
@@ -188,7 +188,7 @@ export default function Register() {
               alt="Mascote MALVADER"
               width={100}
               height={100}
-              className="mascote"
+              className="mascote-register"
             />
             <h1 className="banco-title">
               <span className="banco">BANCO</span>
@@ -205,7 +205,7 @@ export default function Register() {
       </div>
 
       <form className="register-form" onSubmit={handleRegister}>
-        <div className="container">
+        <div className="container-register">
           <p className="dados">Dados Pessoais</p>
 
           <label className="texto">Nome</label>
@@ -276,7 +276,7 @@ export default function Register() {
           />
         </div>
 
-        <div className="container">
+        <div className="container-register">
           <p className="dados">Endereço</p>
 
           <label className="texto">CEP</label>

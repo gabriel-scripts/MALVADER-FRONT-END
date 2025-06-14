@@ -11,7 +11,7 @@ body {
 }
 
 /* Header */
-.header {
+.header-register {
   width: 100%;
   background-color: #e53935;
   padding: 1rem 2rem;
@@ -33,7 +33,7 @@ body {
   gap: 1rem;
 }
 
-.mascote {
+.mascote-register {
   height: auto;
   width: 80px;
 }
@@ -80,7 +80,7 @@ body {
 }
 
 /* Containers para os formulários */
-.container {
+.container-register {
   max-width: 1200px;
   width: 100%; 
   padding: 20px;

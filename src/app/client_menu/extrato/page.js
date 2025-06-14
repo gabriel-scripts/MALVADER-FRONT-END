@@ -26,15 +26,15 @@ export default function ExtratoCliente() {
   };
 
   return (
-    <div className="container">
-      <div className="centralizado-conteudo">
+    <div className="container-ext">
+      <div className="centralizado-conteudo-ex">
         <div className="mascote-container">
           <img src="/imperio.png" alt="Cliente" />
         </div>
 
-        <div className="subtitulo-cliente">EXTRATO</div>
+        <div className="subtitulo-cliente-ex">EXTRATO</div>
 
-        <div className="saldo-container">
+        <div className="saldo-container-ex">
           <p className="texto-saldo">Saldo disponível:</p>
           <div className="valor-saldo">
             {mostrarSaldo ? `R$ ${saldo.toFixed(2)}` : "••••••"}

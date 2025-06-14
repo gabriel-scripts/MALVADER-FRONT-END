@@ -75,7 +75,7 @@ export default function OTPVerification() {
         if (data.cliente) {
           localStorage.setItem("token", data.cliente);
           localStorage.removeItem("loginInfo");
-          router.push("/dashboard/user");
+          router.push("/client");
         } else if (data.funcionario) {
           localStorage.setItem("token", data.funcionario);
           localStorage.removeItem("loginInfo");
