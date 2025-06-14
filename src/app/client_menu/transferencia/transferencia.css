@@ -1,0 +1,275 @@
+html, body, #__next {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1a1422 65%, #18141d 100%);
+    overflow-x: hidden;
+  }
+
+
+  .container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none; 
+  }
+  
+  
+  .centralizado-conteudo {
+    background: #21192b;
+    border-radius: 32px;
+    box-shadow: 0 6px 32px #000a;
+    width: 440px;
+    max-width: 97vw;
+    padding: 44px 34px 36px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .mascote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 200px;
+    margin-bottom: 0.5rem;
+    margin-top: -40px
+   
+  }
+  
+  .mascote-container img {
+    width: 110px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px #0006);
+  }
+
+  .subtitulo-cliente {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.22;
+    text-shadow: 0 2px 6px #0004;
+  }
+  .texto-saldo {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px; 
+    line-height: 1;
+    text-shadow: 0 2px 6px #0004;
+    margin-bottom: 10px;
+  }
+  
+  .saldo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .valor-saldo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 150px;
+    max-width: 150px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    color: white;
+    margin-bottom: 32px;
+    margin: 0;
+
+  }
+  
+  .icone-olho {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 32px;
+    margin: 0;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    margin-top: 3px;
+  }
+  
+  .form-container label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: white;
+
+  }
+  .form-container select {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'14'%20height%3D'10'%3E%3Cpath%20fill%3D'%23aaa'%20d%3D'M7%2010L0%200h14z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    cursor: pointer;
+  }
+  
+  .form-container select option {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  .form-container input {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  .form-container input::placeholder {
+    color: #aaa;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 150px;
+    margin-top: 0px;
+    font-family: 'League Spartan', sans-serif;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .radio-group input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  
+  .radio-group span {
+    padding-left: 28px;
+    position: relative;
+  }
+  
+
+  .radio-group span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+  }
+  
+  .radio-group input[type="radio"]:checked + span::before {
+    background-color: #d33a2c;
+    border-color:#b12d22 ;
+  }
+  
+  .texto {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .campo-valor {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .input-valor {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid red;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+  }
+  
+  .input-valor::placeholder {
+    color: #999;
+  }
+.text_valor{
+    font-size: 1.2rem;
+    color: #d33a2c;
+    margin-top: 20px;
+    font-family: 'League Spartan', sans-serif;
+}
+  .form-container button {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    padding: 12px 40px;
+    background-color: #d33a2c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 0 #881a1a;
+    width: fit-content;
+    align-self: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-container button:hover {
+    background-color: #b12d22;
+  }
+  
+  .botao-voltar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+ 
+  
+  
+  

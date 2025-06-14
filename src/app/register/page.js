@@ -201,7 +201,7 @@ export default function Register() {
         </div>
       </header>
       <div className="cabeçalho">
-        <p>Cadastre-se no Malvader e desperte o poder financeiro que há em você</p>
+        <p>CADASTRE-SE NO MALVADER E DESPERTE O PODER FINANCEIRO QUE HÁ EM VOCÊ </p>
       </div>
 
       <form className="register-form" onSubmit={handleRegister}>

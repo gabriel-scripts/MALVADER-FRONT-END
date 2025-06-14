@@ -1,0 +1,132 @@
+html, body, #__next {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1422 65%, #18141d 100%);
+  overflow-x: hidden;
+}
+
+
+.container{
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none; 
+}
+
+
+.centralizado-conteudo {
+  background: #21192b;
+  border-radius: 32px;
+  box-shadow: 0 6px 32px #000a;
+  width: 440px;
+  max-width: 97vw;
+  padding: 44px 34px 36px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.mascote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 200px;
+  margin-bottom: 0.5rem;
+}
+
+.mascote-container img {
+  width: 110px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px #0006);
+}
+
+.subtitulo-cliente {
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.19rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 32px;
+  margin-top: 0;
+  line-height: 1.22;
+  text-shadow: 0 2px 6px #0004;
+}
+
+.saldo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.valor-saldo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 150px;
+  max-width: 150px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: monospace;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.icone-olho {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 32px;
+}
+
+
+.botoes-cliente {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+.botoes-cliente button {
+  background: #df2121;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.23rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  height: 74px;
+  min-width: 0;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 2px 14px #0002;
+  transition: background 0.18s, color 0.15s, transform 0.08s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.botoes-cliente button:hover {
+  background: #ce2020;
+  color: #2f2640;
+  transform: translateY(-2px) scale(1.04);
+}
