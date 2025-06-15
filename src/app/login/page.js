@@ -26,9 +26,13 @@ export default function Login() {
       senha: senha,
       ...(tipo === "funcionario" && { codigo_funcionario: codigoFuncionario }),
     };
+    const endpoint =
+      tipo === "funcionario"
+        ? `${API_URL}/login_funcionario`
+        : `${API_URL}/login_cliente`;
 
     try {
-      const response = await fetch(`${API_URL}/login`, {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +41,6 @@ export default function Login() {
       });
 
       if (response.ok) {
-        // Salva as infos necessárias no localStorage para a tela de OTP usar
         localStorage.setItem(
           "loginInfo",
           JSON.stringify({
@@ -47,7 +50,6 @@ export default function Login() {
             codigo_funcionario: tipo === "funcionario" ? codigoFuncionario : "",
           })
         );
-        // Redireciona para a tela de OTP 
         router.push("/otp");
       } else {
         let errorMessage = "Erro ao logar.";
@@ -63,7 +65,6 @@ export default function Login() {
       setErro("Erro de conexão: " + error.message);
     }
   };
-
   return (
     <div className="container-login">
       {/* Lado esquerdo */}
