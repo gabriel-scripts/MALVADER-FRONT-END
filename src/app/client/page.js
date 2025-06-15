@@ -46,7 +46,7 @@ export default function SaldoCliente() {
         <button onClick={() => router.push("/client_menu/transferencia")}>TRANSFERÊNCIA</button>
           <button onClick={() => router.push("/client_menu/deposito")}>DEPÓSITO</button>
           <button onClick={() => router.push("/client_menu/saque")}>SAQUE</button>
-          <button onClick={() => router.push("/client_menu/lmite")}>LIMITE</button>
+          <button onClick={() => router.push("/client_menu/limite")}>LIMITE</button>
           <button onClick={() => router.push("/client_menu/extrato")}>EXTRATO</button>
           <button onClick={() => router.push("/client_menu/emprestimo")}>EMPRÉSTIMO</button>
         </div>

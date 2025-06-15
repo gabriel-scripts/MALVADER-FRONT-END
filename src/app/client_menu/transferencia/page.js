@@ -28,12 +28,12 @@ export default function TransferenciaCliente() {
 
   return (
         
- <div className="container">
- <div className="centralizado-conteudo">
+ <div className="container-tran">
+ <div className="centralizado-conteudo-tran">
         <div className="mascote-container">
           <img src="/imperio.png" alt="Cliente" />
         </div>
-        <div className="subtitulo-cliente">TRANSFERÊNCIA</div>
+        <div className="subtitulo-transferencia">TRANSFERÊNCIA</div>
 
         <div className="saldo-container">
           <p className="texto-saldo">Saldo disponível:</p>

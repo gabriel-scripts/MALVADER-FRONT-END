@@ -32,7 +32,7 @@ export default function ExtratoCliente() {
           <img src="/imperio.png" alt="Cliente" />
         </div>
 
-        <div className="subtitulo-cliente-ex">EXTRATO</div>
+        <div className="subtitulo-extrato">EXTRATO</div>
 
         <div className="saldo-container-ex">
           <p className="texto-saldo">Saldo disponível:</p>

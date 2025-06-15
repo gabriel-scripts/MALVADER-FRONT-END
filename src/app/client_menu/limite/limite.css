@@ -1,0 +1,199 @@
+html, body, #__next {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1a1422 65%, #18141d 100%);
+    overflow-x: hidden;
+  }
+  
+  
+  .container-limite{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none; 
+  }
+  
+  
+  .centralizado-conteudo-l {
+    background: #21192b;
+    border-radius: 32px;
+    box-shadow: 0 6px 32px #000a;
+    width: 440px;
+    max-width: 97vw;
+    padding: 44px 34px 36px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .mascote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 200px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .mascote-container img {
+    width: 110px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px #0006);
+  }
+  
+  .subtitulo-limite {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.19rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 32px;
+    margin-top: 0;
+    line-height: 1.22;
+    text-shadow: 0 2px 6px #0004;
+  }
+
+  .texto-saldo {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px; 
+    line-height: 1;
+    text-shadow: 0 2px 6px #0004;
+    margin-bottom: 45px;
+  }
+  
+  .saldo-container-l {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .valor-saldo-l{
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 150px;
+    max-width: 150px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    color: white;
+    margin-bottom: 32px;
+  }
+  
+  .icone-olho {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 32px;
+  }
+
+
+  .barra-limite {
+    width: 100%;
+    height: 10px;
+    background-color: #455a64;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .preenchimento-barra {
+    height: 100%;
+    background-color: #00e676;
+    transition: width 0.5s ease;
+  }
+  
+  
+  
+  .limite-detalhes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Ajuste conforme a distância que você quer da barra */
+    padding: 0 5px;    /* Só pra dar uma respirada lateral */
+  }
+  
+  .bloco-uso {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Texto usado colado à esquerda */
+  }
+  
+  .bloco-disp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Texto disponível colado à direita */
+  }
+  
+  .valor-uso {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    margin-right:130px;
+  }
+  .valor-disp{
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    margin-left:130px;
+  }
+
+  .valor-total{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-top: 32px;  
+}
+
+  .label-uso, .label-disp {
+    font-size: 12px;
+    color: #cfd8dc;
+    margin-top: 2px;
+  }
+
+  .voltar button {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    padding: 12px 40px;
+    background-color: #d33a2c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 0 #881a1a;
+    width: fit-content;
+    align-self: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .voltar button:hover {
+    background-color: #b12d22;
+  }
+
+  .botao-voltar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+  }
