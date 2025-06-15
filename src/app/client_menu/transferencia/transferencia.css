@@ -236,7 +236,8 @@ html, body, #__next {
   .input-valor::placeholder {
     color: #999;
   }
-.text_valor{
+  
+  .text_valor{
     font-size: 1.2rem;
     color: #d33a2c;
     margin-top: 20px;
