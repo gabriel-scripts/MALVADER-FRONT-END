@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import "./limite.css";
 import { useRouter } from "next/navigation";
 
 export default function LimiteCliente() {
   const [mostrarSaldo, setMostrarSaldo] = useState(false);
-  const saldo = 5273.45;
+  const [saldo, setSaldo] = useState(null);
   const [mostrarLimite, setMostrarLimite] = useState(false);
   const limiteTotal = 5000.0;
   const limiteUtilizado = 2000.0;
@@ -19,6 +19,37 @@ export default function LimiteCliente() {
     setMostrarSaldo(!mostrarSaldo);
   };
   const porcentagemUso = (limiteUtilizado / limiteTotal) * 100;
+
+
+  const fetchSaldo = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setErro("Usuário não autenticado.");
+        return;
+      }
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/saldo`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setSaldo(Number(data.valor));
+        } else {
+          setErro("Erro ao buscar saldo.");
+        }
+      } catch (err) {
+        setErro("Erro de conexão.");
+      }
+  };
+  useEffect(() => {
+      fetchSaldo();
+    }, []);
 
   return (
     <div className="container-limite">

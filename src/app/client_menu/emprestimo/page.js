@@ -1,13 +1,13 @@
 "use client";
 
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import "./emprestimo.css";
 
 export default function EmprestimoCliente() {
   const [mostrarSaldo, setMostrarSaldo] = useState(false);
-  const saldo = 5273.45;
+  const [saldo, setSaldo] = useState(null);
   const router = useRouter();
 
   const [valorEmprestimo, setValorEmprestimo] = useState("");
@@ -18,6 +18,36 @@ export default function EmprestimoCliente() {
   const alternarVisibilidade = () => {
     setMostrarSaldo(!mostrarSaldo);
   };
+
+  const fetchSaldo = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          setErro("Usuário não autenticado.");
+          return;
+        }
+        try {
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/saldo`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          if (response.ok) {
+            const data = await response.json();
+            setSaldo(Number(data.valor));
+          } else {
+            setErro("Erro ao buscar saldo.");
+          }
+        } catch (err) {
+          setErro("Erro de conexão.");
+        }
+    };
+    useEffect(() => {
+        fetchSaldo();
+      }, []);
 
   const formatarMoeda = (valor) => {
     const apenasNumeros = valor.replace(/\D/g, "");
@@ -66,12 +96,13 @@ export default function EmprestimoCliente() {
     const parcela = valorTotal / prazoNumerico;
 
     setResultado(
-      `Empréstimo Aprovado!
-Valor: R$ ${valorNumerico.toFixed(2)}
-Prazo: ${prazoNumerico} meses
-Juros: ${taxaJuros}% ao mês
-Total com juros: R$ ${valorTotal.toFixed(2)}
-Parcela: R$ ${parcela.toFixed(2)}`
+      `
+      Empréstimo Aprovado!
+      Valor: R$ ${valorNumerico.toFixed(2)}
+      Prazo: ${prazoNumerico} meses
+      Juros: ${taxaJuros}% ao mês
+      Total com juros: R$ ${valorTotal}
+      Parcela: R$ ${parcela.toFixed(2)}`
     );
   };
 
@@ -86,7 +117,7 @@ Parcela: R$ ${parcela.toFixed(2)}`
         <div className="saldo-container-e">
           <p className="texto-saldo">Saldo disponível:</p>
           <div className="valor-saldo-e">
-            {mostrarSaldo ? `R$ ${saldo.toFixed(2)}` : "••••••"}
+            {mostrarSaldo ? `R$ ${saldo}` : "••••••"}
           </div>
           <button
             onClick={alternarVisibilidade}

@@ -36,7 +36,7 @@ export default function SaldoCliente() {
         );
         if (response.ok) {
           const data = await response.json();
-          setSaldo(data);
+          setSaldo(data.valor);
         } else {
           setErro("Erro ao buscar saldo.");
         }
