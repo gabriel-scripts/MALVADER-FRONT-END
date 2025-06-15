@@ -42,6 +42,27 @@ export default function SaqueCliente() {
 
   const saquesRestantes = totalSaquesPermitidos - saquesRealizados;
 
+
+  const formatarMoeda = (valor) => {
+    const apenasNumeros = valor.replace(/\D/g, ""); 
+    const valorNumerico = parseFloat(apenasNumeros) / 100; 
+  
+    if (isNaN(valorNumerico)) {
+      return "";
+    }
+  
+    return valorNumerico.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  };
+  
+  const handleChangeSaque = (e) => {
+    const valorFormatado = formatarMoeda(e.target.value);
+    setValorSaque(valorFormatado);
+  };
+   
+
   return (
     <div className="container-saque">
       <div className="centralizado-conteudo-s">
@@ -67,22 +88,22 @@ export default function SaqueCliente() {
         <div className="form-saque">
           <p className="text_valor">Valor a sacar</p>
           <input
-            type="text"
-            placeholder="R$ 0,00"
-            value={valorSaque}
-            onChange={(e) => setValorSaque(e.target.value)}
-            style={{
-              width: '100%',
-              border: 'none',
-              borderBottom: '2px solid red',
-              fontSize: '3rem',
-              padding: '8px 0',
-              outline: 'none',
-              backgroundColor: 'transparent',
-              color: '#000',
-              marginTop: '5px',
-            }}
-          />
+        type="text"
+        placeholder="R$ 0,00"
+        value={valorSaque}
+        onChange={handleChangeSaque}
+        style={{
+    width: '100%',
+    border: 'none',
+    borderBottom: '2px solid red',
+    fontSize: '3rem',
+    padding: '8px 0',
+    outline: 'none',
+    backgroundColor: 'transparent',
+    color: '#000',
+    marginTop: '5px',
+  }}
+/>
 
          
           <p className="saques-restantes">

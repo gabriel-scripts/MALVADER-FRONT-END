@@ -24,7 +24,25 @@ export default function TransferenciaCliente() {
 
   };
 
-
+  const [valorTransferencia, setValorTransferencia] = useState("");
+  const formatarMoeda = (valor) => {
+    const apenasNumeros = valor.replace(/\D/g, ""); 
+    const valorNumerico = parseFloat(apenasNumeros) / 100; 
+  
+    if (isNaN(valorNumerico)) {
+      return "";
+    }
+  
+    return valorNumerico.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  };
+  
+  const handleChangeTransferencia = (e) => {
+    const valorFormatado = formatarMoeda(e.target.value);
+    setValorTransferencia(valorFormatado);
+  };
 
   return (
         
@@ -113,12 +131,12 @@ export default function TransferenciaCliente() {
 
 
 <p className="text_valor">valor a pagar</p>
-<input
-  type="text"
-  placeholder="R$ 0,00"
-  value={valor}
-  onChange={(e) => setValor(e.target.value)}
-  style={{
+          <input
+        type="text"
+        placeholder="R$ 0,00"
+        value={valorTransferencia}
+        onChange={handleChangeTransferencia}
+        style={{
     width: '100%',
     border: 'none',
     borderBottom: '2px solid red',
