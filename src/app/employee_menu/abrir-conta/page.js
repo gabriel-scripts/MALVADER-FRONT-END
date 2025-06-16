@@ -16,14 +16,13 @@ export default function AbrirConta() {
     vencimento: "",
   });
   const [mensagem, setMensagem] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  // Valores simulados automáticos
   const TAXA_RENDIMENTO = "0,50% a.m. (definida pelo banco)";
   const TAXA_MANUTENCAO = "29,90 (definida pelo sistema)";
   const VALOR_MINIMO = "500,00";
   const LIMITE_DINAMICO = "Definido automaticamente pelo sistema";
 
-  // Atualiza campos do form
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -44,13 +43,72 @@ export default function AbrirConta() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setMensagem("");
+    setLoading(true);
+
+
     if (!form.cpf || !form.nome || !form.agencia) {
       setMensagem("Preencha todos os campos obrigatórios!");
+      setLoading(false);
       return;
     }
-    setMensagem("Conta aberta com sucesso! Número: 12345-6");
+    const body = {
+      numero_conta: null,
+      id_agencia: Number(form.agencia),
+      saldo: 0.0,
+      cpf_cliente: form.cpf,
+      tipo_conta:
+        tipo === "CP"
+          ? "poupanca"
+          : tipo === "CC"
+          ? "corrente"
+          : "investimento",
+      id_cliente: 123, // Substitua pelo id real se necessário
+      data_abertura: new Date().toISOString().split("T")[0],
+      status: "ativa",
+      agencia: {
+        nome: "Agência Central",
+        codigo_agencia: Number(form.agencia),
+        endereco_id: "END123",
+      },
+      perfil_risco:
+        tipo === "CI"
+          ? form.perfilRisco
+          : "medio",
+    };
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/abrir_conta", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (response.ok) {
+        setMensagem("Conta aberta com sucesso!");
+        setForm({
+          agencia: "",
+          nome: "",
+          cpf: "",
+          nascimento: "",
+          telefone: "",
+          endereco: "",
+          senha: "",
+          perfilRisco: "",
+          vencimento: "",
+        });
+      } else {
+        const data = await response.json();
+        setMensagem(data.detail || "Erro ao abrir conta.");
+      }
+    } catch (err) {
+      setMensagem("Erro de conexão.");
+    }
+    setLoading(false);
   };
 
   return (
@@ -64,7 +122,6 @@ export default function AbrirConta() {
       </div>
 
       <form className="abrir-conta-form" onSubmit={handleSubmit}>
-   
         <div className="campo-form">
           <label>Agência *</label>
           <input name="agencia" placeholder="Agência" value={form.agencia} onChange={handleChange} />
@@ -94,7 +151,6 @@ export default function AbrirConta() {
           <input name="senha" type="password" placeholder="Senha" value={form.senha} onChange={handleChange} />
         </div>
 
-      
         {tipo === "CP" && (
           <div className="campo-form">
             <label>Taxa de rendimento</label>
@@ -163,7 +219,9 @@ export default function AbrirConta() {
           </>
         )}
 
-        <button type="submit">Abrir Conta</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Abrindo..." : "Abrir Conta"}
+        </button>
       </form>
       {mensagem && <div className="mensagem">{mensagem}</div>}
     </div>
