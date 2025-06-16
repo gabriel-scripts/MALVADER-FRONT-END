@@ -51,7 +51,6 @@ export default function CadastrarFuncionario() {
   const inputDataRef = useRef(null);
   const cursorPosition = useRef(null);
 
-  //Busca CEP
   async function buscaCep() {
     const cepLimpo = cep.replace(/\D/g, "");
     if (cepLimpo.length !== 8) {
@@ -73,8 +72,6 @@ export default function CadastrarFuncionario() {
       alert("Erro ao buscar CEP");
     }
   }
-
-  // Para formatar data DD/MM/AAAA
   function handleDataChange(e) {
     let value = e.target.value;
     let cursorPos = e.target.selectionStart;
@@ -120,9 +117,7 @@ export default function CadastrarFuncionario() {
       }
     }
 
-    // Lê o token do localStorage (depois do login)
     const token = localStorage.getItem("token"); 
-
     const body = {
       nome: nome,
       cpf: cpf.replace(/\D/g, ""),

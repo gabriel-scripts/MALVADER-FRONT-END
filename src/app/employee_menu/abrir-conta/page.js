@@ -58,8 +58,6 @@ export default function AbrirConta() {
       setLoading(false);
       return;
     }
-
-    const id_cliente = await buscarIdClientePorCpf(form.cpf);
     if (!id_cliente) {
       setMensagem("Cliente não encontrado pelo CPF.");
       setLoading(false);
