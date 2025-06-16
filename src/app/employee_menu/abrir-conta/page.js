@@ -48,24 +48,35 @@ export default function AbrirConta() {
     setMensagem("");
     setLoading(true);
 
-
-    if (!form.cpf || !form.nome || !form.agencia) {
+    if (!form.cpf || !form.nome || !form.agencia || !form.nascimento || !form.telefone || !form.endereco || !form.senha) {
       setMensagem("Preencha todos os campos obrigatórios!");
+      setLoading(false);
+      return;
+    }
+    if (tipo === "CI" && !form.perfilRisco) {
+      setMensagem("Selecione o perfil de risco!");
+      setLoading(false);
+      return;
+    }
+
+    const id_cliente = await buscarIdClientePorCpf(form.cpf);
+    if (!id_cliente) {
+      setMensagem("Cliente não encontrado pelo CPF.");
       setLoading(false);
       return;
     }
     const body = {
       numero_conta: null,
       id_agencia: Number(form.agencia),
-      saldo: 0.0,
       cpf_cliente: form.cpf,
+      saldo: 0.0,
       tipo_conta:
         tipo === "CP"
           ? "poupanca"
           : tipo === "CC"
           ? "corrente"
           : "investimento",
-      id_cliente: 123, // Substitua pelo id real se necessário
+      id_cliente: id_cliente,
       data_abertura: new Date().toISOString().split("T")[0],
       status: "ativa",
       agencia: {
@@ -76,17 +87,22 @@ export default function AbrirConta() {
       perfil_risco:
         tipo === "CI"
           ? form.perfilRisco
-          : "medio",
+          : "medio", 
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/abrir_conta", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
+      const token = localStorage.getItem("token");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/contas`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(body),
+        }
+      );
 
       if (response.ok) {
         setMensagem("Conta aberta com sucesso!");
@@ -103,7 +119,7 @@ export default function AbrirConta() {
         });
       } else {
         const data = await response.json();
-        setMensagem(data.detail || "Erro ao abrir conta.");
+        setMensagem(data.detail || "Erro ao criar conta.");
       }
     } catch (err) {
       setMensagem("Erro de conexão.");
@@ -219,9 +235,7 @@ export default function AbrirConta() {
           </>
         )}
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Abrindo..." : "Abrir Conta"}
-        </button>
+        <button type="submit" disabled={loading}>{loading ? "Abrindo..." : "Abrir Conta"}</button>
       </form>
       {mensagem && <div className="mensagem">{mensagem}</div>}
     </div>
